@@ -1,5 +1,5 @@
 # Angular-Mobile-Drawing-App-Using-Fabric.js
-Angular Mobile Drawing App Using Fabric.js that is an ImageMap &amp; Animation Editor &amp; Virtual Designer
+Angular 8 Mobile Drawing App Using Fabric.js that is an ImageMap &amp; Animation Editor &amp; Virtual Designer
 Summary
 This article includes the full source code for both an Angular 8 Fabric.js Image Editor and a plain JavaScript HTML5 ImageMap Editor for laptops. I created these apps that allow you to create an image map from an existing image that can easily be used with the JQuery plugin ImageMapster. In addition, you can also create a Fabric canvas that functions exactly like an image map but with far more features than any image map. I will be updating the source code from time to time with new web tools and features.
 
