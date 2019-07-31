@@ -1,0 +1,183 @@
+<header data-id="header" data-position="fixed" data-role="header" class="ui-header-portrait" data-tap-toggle="false" data-transition="none" data-theme="a" style="border-bottom:6px solid #e9000c !important;">
+    <app-site-plan-header></app-site-plan-header>
+</header>
+
+<div id="appContent">
+    <div id="zebra">
+        <div style="z-index: 9999999999999999999999;margin: .2em 0 !important;display: none !important;">
+            <select name="fonts_select" id="fonts_select" data-role="none">
+                <option *ngFor="let item of zfonts; let i = index">
+                    <!-- {{i}}. {{item}} -->
+                    {{item}}
+                </option>
+            </select>
+        </div>
+
+    </div>
+    <div data-role="panel" id="panel_controls" data-display="overlay" data-position="right" class="frosted ui-panel" data-dismissible="true" data-theme="a">
+        <div id="scroller" class="ui-panel-inner" style="overflow-x:hidden;overflow-y: scroll !important;height: 100% !important;">
+            <div id="iscroll">
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <!-- <div style="float: left !important;width: 60px !important;">
+                    <button (click)="panelText($event)" id="btnAddText" data-role="button" class="btn btn-default" 
+                    style="margin: 8px 0px 0px 8px !important;padding: 8px 0px 8px 0px !important;">
+                        <span style="font-size: .8em">Custom</span>
+                    </button>
+                </div> -->
+                <table id="thelist">  
+                    <tr>
+                        <td style="padding: 0px 0px 0px 0px !important;max-width: 20% !important;font-size:.8em !important;cursor: hand !important;">
+                            <button style="width: 60px !important;" (click)="openFontsDialog($event)" id="btnFonts" data-role="button" class="btn btn-default" 
+                            style="margin: 8px 0px 0px 8px !important;padding: 8px 0px 8px 0px !important;">
+                                <span style="font-size: .8em">Fonts</span>
+                            </button>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td style="padding: 0px 0px 0px 0px !important;max-width: 20% !important;font-size:.8em !important;cursor: hand !important;">
+                            <button style="width: 60px !important;" (click)="saveLayout($event)" id="btnSaveLayout" data-role="button" class="btn btn-default" 
+                            style="margin: 8px 0px 0px 8px !important;padding: 8px 0px 8px 0px !important;">
+                                <span style="font-size: .8em">Save</span>
+                            </button>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td style="padding: 0px 0px 0px 0px !important;max-width: 20% !important;font-size:.8em !important;cursor: hand !important;">
+                            <button style="width: 60px !important;" (click)="getLayout($event)" id="btnGetLayout" data-role="button" class="btn btn-default" 
+                            style="margin: 8px 0px 0px 8px !important;padding: 8px 0px 8px 0px !important;">
+                                <span style="font-size: .8em">Load</span>
+                            </button>
+                        </td>
+                    </tr>                       
+                    <tr *ngFor="let row of categories.slice(0, categories.length/1 + 1); let i = index">
+                        <td *ngFor="let item of categories.slice(i * 1, (i * 1) + 1)" style="padding: 0px 0px 0px 0px !important;max-width: 20% !important;font-size:.8em !important;cursor: hand !important;">
+                            <a (click)="panelClick($event, item.image)" href="#" style="z-index: 99999999 !important;">
+                                <img src="./assets/img_items/{{item.image}}" />     
+                                <div style="z-index: 1 !important;margin-top: 0px !important;font-weight:bold !important;font-size: .8em !important;">{{item.title}}</div>                                 
+                            </a>
+                        </td>                                    
+                    </tr>                         
+                </table>
+                <!-- <div style="float: left !important;width: 100% !important;">
+                    <div style="float: left !important;width: 20% !important;">
+                        <button (click)="panelText($event)" id="btnAddText" data-role="button" class="btn btn-default">Add</button>
+                    </div> 
+                    <div style="float: left !important;width: 80% !important;">
+                        <textarea id="addtext" wrap="hard" 
+                        style="cursor:default;background-color: white;height: 100% !important;width: 100% !important;
+                        -webkit-box-sizing: border-box !important;-moz-box-sizing: border-box !important;    
+                        box-sizing: border-box !important;">Enter Text</textarea>
+                    </div>
+                </div> -->
+                <!-- <table style="max-width: 84% !important;">
+                    <tr style="max-width: 90% !important;">
+                        <td style="color:black !important;font-size: .8em !important;">Scale</td>
+                        <td style="width: 90% !important;">
+                            <ion-range-slider #sliderScale id="sliderScale"
+                                type="single"
+                                min=".5"
+                                max="1.5"
+                                step=".25"
+                                from="1"
+                                from_shadow="false"
+                                to_shadow="false"
+                                decorate_both="false"
+                                (onFinish)="finishScale($event)"></ion-range-slider>
+                        </td>
+                    </tr>
+                    <tr style="max-width: 90% !important;">
+                        <td style="color:black !important;font-size: .8em !important;">Angle</td>
+                        <td style="width: 90% !important;">
+                            <ion-range-slider #sliderAngle id="sliderAngle"
+                            type="single"
+                            min="-360"
+                            max="360"
+                            step="90"
+                            from="0"
+                            from_shadow="false"
+                            to_shadow="false"
+                            decorate_both="false"                                    
+                            (onFinish)="finishAngle($event)"></ion-range-slider>
+                        </td>
+                    </tr>
+                </table> -->
+                <!-- <table>
+                    <tr>
+                        <td>
+                            <button (click)="panelText($event)" id="btnAddText" data-role="button" class="btn success ui-btn ui-btn-inline btn-panel">Text</button>
+                        </td>
+                        <td>
+                            <button (click)="saveLayout($event, 'save')" class="btn ui-btn ui-btn-inline btn-panel" data-id="close" data-icon="delete">Save</button>
+                        </td>
+                        <td>
+                            <button (click)="delete($event)" id="btnDelete" data-role="button" class="btn success ui-btn ui-btn-inline btn-panel">Delete</button>
+                        </td> 
+                    </tr>
+                </table> -->
+                <!-- <table>
+                    <tr>
+                        <td>
+                            <button (click)="printCanvas($event, 'print')" class="btn ui-btn ui-btn-inline btn-panel" data-id="close" data-icon="print">Print</button>
+                        </td>
+                        <td>
+                            <button (click)="googleMapsApp($event, 'googleMapsApp')" class="btn ui-btn ui-btn-inline btn-panel external" data-id="close" data-icon="maps">Maps</button>
+                        </td>
+                        <td>
+                            <button (click)="closePanel($event, 'close')" class="btn ui-btn ui-btn-inline btn-panel" data-id="close" data-icon="delete">Close</button>
+                        </td>
+                    </tr>
+                    </table>  -->
+                <!-- <table>
+                    <tr>
+                        <td>
+                            <button (click)="GoogleMapsApp($event)" id="btnSaveCanvas" data-role="button" class="btn success ui-btn ui-btn-inline btn-panel">GMaps</button>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td> 
+                    </tr>
+                    </table>  -->
+                <!-- <table>
+                    <tr>
+                        <td>
+                            <button (click)="saveCanvas($event)" id="btnSaveCanvas" data-role="button" class="btn success ui-btn ui-btn-inline btn-panel">Save</button>
+                        </td>
+                        <td>
+                            <button (click)="loadCanvas($event)" id="btnLoadanvas" data-role="button" class="btn success ui-btn ui-btn-inline btn-panel" data-icon="delete">Load</button>
+                        </td>
+                        <td>
+                        </td> 
+                    </tr>
+                    </table> -->
+                    <!-- <p><a href="comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic" _target="_blank">Maps App</a></p>
+                    <p><a href="http://maps.google.com/maps?geo:50,10" _target="_blank">Location 50/10</a></p>
+                    <p><a href="http://maps.google.com/maps?geo:Vienna" _target="_blank">Location Vienna</a></p>
+                    <p><a href="http://maps.google.com/maps?geo:?z=5&q=New+York" _target="_blank">Zoom 5, Search for New York</a></p>
+                    <p><a href="http://maps.google.com/maps?geo:?q=San+Francisco&z=15" _target="_blank">Zoom 15, Search for San Francisco</a></p>
+                    <p><a href="http://maps.google.com/maps?saddr=New+York&daddr=San+Francisco" _target="_blank">Route New York to San Francisco</a></p>
+                    <p><a href="http://maps.google.com/maps?saddr=50,10&daddr=50,20" _target="_blank">Route 50/10 to 50/20</a></p> -->               
+                    <div style="height:1400px;"></div>
+            </div>
+        </div>
+    </div>    
+    <router-outlet>
+    </router-outlet>
+</div>
+        
+
+
+
+         
+        
+
+
+
+
+        
+        
+        
+        
+        
+        
