@@ -5,6 +5,8 @@ This article includes the full source code for both an Angular 8 Fabric.js Image
 
 The Angular 8 version is designed for use on mobile phones where you might want to layout objects inside a room.
 
+<img src="/mobile-drawing-app/src/assets/imagemapeditor.gif" height="483px" width="1018px" />
+
 # Introduction
 I recently had a client who wanted me to create an HTML5 Virtual Home Designer website with images of homes that users could "color in" like in those crayon coloring books where you have an image with outlines of parts of the image and you paint within the outlines.  But in this case of painting parts of a home like the roof or stonefront you would also want to fill in an outlined areas with patterns where ecah pattern can be different colors. The obvious choice initially was to use image maps of a houses where the user could select different colors and patterns for each area of the image map of a home like the roof, gables, siding, etc. And the obvious choice was to use the popular JQuery plugin for image maps, i.e., Imagemapster. See https://github.com/jamietre/imagemapster
 
