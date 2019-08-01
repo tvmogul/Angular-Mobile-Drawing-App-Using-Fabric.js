@@ -48,8 +48,10 @@ If you add static: true on a dynamic element (wrapped in a condition or a loop),
 OR, setting it to static: false should behave as you're expecting it to and query results available in ngAfterViewInit.
 ```ruby
 @ViewChild('swipeCanvas', {static: false}) swipeCanvas: ElementRef;
-And it is thats imple to add a Fabric canvas in Angular 8.
 ```
+And it is thats imple to add a Fabric canvas in Angular 8.
+
+** Installation & Running App **
 To install this app just download and unzip aand load the unzipped folder into VS Code and run in Terminal:
 ```ruby
 npm install
