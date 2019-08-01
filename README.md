@@ -16,7 +16,8 @@ To create my Image Map Editor I decided to use Fabric.js, a powerful, open-sourc
 
 I recently added a separate Angular 8 Mobile version of this HTML5 ImageMap Editor and the source code for that is available for download above. To instal the Angular version just download and unzip the file and open the code in VS Code and run in terminal:
 
-npm install
+*** npm install ***
+
 The most important thing about the Angular 8 version is how we add Fabric.js to our Angular Mobile App as follows:
 
 npm i fabric
