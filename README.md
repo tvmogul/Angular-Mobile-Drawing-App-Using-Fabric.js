@@ -16,24 +16,18 @@ To create my Image Map Editor I decided to use Fabric.js, a powerful, open-sourc
 
 I recently added a separate Angular 8 Mobile version of this HTML5 ImageMap Editor and the source code for that is available for download above. To instal the Angular version just download and unzip the file and open the code in VS Code and run in terminal:
 
-``` ruby
+```ruby
 npm install
 ```
-
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-
 The most important thing about the Angular 8 version is how we add Fabric.js to our Angular Mobile App as follows:
 
+```ruby
 npm i fabric
 npm i @types/fabric
+```
 Then in our component that will display our Fabric canvas we add:
-
+```ruby
 import { fabric } from 'fabric';
-
 declare var canvas: any;
 
 this.canvas = new fabric.Canvas('swipeCanvas', {
@@ -43,22 +37,26 @@ this.canvas = new fabric.Canvas('swipeCanvas', {
    selectionBorderColor: 'blue',
    defaultCursor: 'hand'
 });
+```
 
 In Angular 8 there is a major change in how we get a reference of application view. Since Angular 8 ViewChild and ContentChild decorators must now have a new option called static that is applied as follows:.
 
 If you add static: true on a dynamic element (wrapped in a condition or a loop), then it will not be accessible in ngOnInit nor in ngAfterViewInit.  
-
+```ruby
 @ViewChild('swipeCanvas', {static: true}) swipeCanvas: ElementRef;
+```
 OR, setting it to static: false should behave as you're expecting it to and query results available in ngAfterViewInit.
-
+```ruby
 @ViewChild('swipeCanvas', {static: false}) swipeCanvas: ElementRef;
 And it is thats imple to add a Fabric canvas in Angular 8.
-
+```
 To install this app just download and unzip aand load the unzipped folder into VS Code and run in Terminal:
+```ruby
 npm install
-
+```
 Then to run this app just enter in Terminal:
+```ruby
 ng serve
-
+```
 That's it!
 
