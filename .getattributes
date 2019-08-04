@@ -1,5 +1,6 @@
 *.ts linguist-detectable=true
 *.java linguist-detectable=false
+*.javascript linguist-detectable=false
 *.css linguist-detectable=false
 *.csharp linguist-detectable=false
 *.js linguist-detectable=false  
@@ -7,7 +8,8 @@
 *.xml linguist-detectable=false    
 
 * text=auto
-*.js linguist-language=tyescript
-*.css linguist-language=tyescript
-*.html linguist-language=tyescript
-*.ts linguist-language=tyescript
+*.js linguist-language=typescript
+*.css linguist-language=typescript
+*.html linguist-language=typescript
+*.ts linguist-language=typescript
+*.javascript linguist-language=typescript
